@@ -1,5 +1,38 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+.wrapper {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokeball {
+  animation: frames 0.8s linear 0s infinite;
+}
+
+
+@keyframes frames {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+ 
+}
+
+::-webkit-scrollbar-track {
+  background: #c6c6c6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6d6c6c;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #848484;
 }
