@@ -1,4 +1,4 @@
-import { AppBar, Link, Toolbar, Typography } from "@mui/material";
+import { AppBar, Link, Toolbar } from "@mui/material";
 import Logo from "../assets/images/logo.svg";
 
 export default function Header() {
