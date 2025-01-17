@@ -7,7 +7,7 @@ import {
   Box,
   Chip,
   useMediaQuery,
-  Theme
+  Theme,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { PokemonCard as PokemonCardType } from "../types/pokemon";
@@ -20,7 +20,9 @@ interface ModalProps {
 }
 
 export default function Modal({ pokemon, open, onClose }: ModalProps) {
-  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
 
   if (!pokemon) return null;
 
@@ -63,12 +65,12 @@ export default function Modal({ pokemon, open, onClose }: ModalProps) {
           }}
         >
           <img
-            src={pokemon.images.small || "/placeholder.svg"}
+            src={pokemon.images.small}
             alt={pokemon.name}
-            style={{ 
-              width: isMobile ? "150px" : "195.59px", 
-              height: isMobile ? "150px" : "195.59px", 
-              objectFit: "contain" 
+            style={{
+              width: isMobile ? "150px" : "195.59px",
+              height: isMobile ? "150px" : "195.59px",
+              objectFit: "contain",
             }}
           />
 
@@ -103,13 +105,13 @@ export default function Modal({ pokemon, open, onClose }: ModalProps) {
               gap: isMobile ? 2 : 4,
               width: "100%",
               justifyContent: "center",
-              flexDirection: isMobile ? "column" : "row",
+              flexDirection: "row",
             }}
           >
             <Box
               sx={{
-                borderRight: isMobile ? "none" : "2px solid  #D4D7DE",
-                pr: isMobile ? "0" : "30px",
+                borderRight: "2px solid  #D4D7DE",
+                pr: "30px",
                 textAlign: isMobile ? "center" : "left",
               }}
             >
@@ -135,11 +137,11 @@ export default function Modal({ pokemon, open, onClose }: ModalProps) {
                 </Typography>
               </Box>
               <Typography
-                sx={{ 
-                  color: "#666666", 
-                  fontSize: isMobile ? "9px" : "10px", 
-                  textAlign: "center", 
-                  fontFamily: "Poppins" 
+                sx={{
+                  color: "#666666",
+                  fontSize: "10px",
+                  textAlign: "center",
+                  fontFamily: "Poppins",
                 }}
                 variant="body2"
               >
@@ -149,8 +151,8 @@ export default function Modal({ pokemon, open, onClose }: ModalProps) {
             <Box
               sx={{
                 textAlign: "center",
-                borderRight: isMobile ? "none" : "2px solid  #D4D7DE",
-                pr: isMobile ? "0" : "30px",
+                borderRight: "2px solid  #D4D7DE",
+                pr: "30px",
               }}
             >
               <Box
@@ -175,10 +177,10 @@ export default function Modal({ pokemon, open, onClose }: ModalProps) {
                 </Typography>
               </Box>
               <Typography
-                sx={{ 
-                  color: "#666666", 
-                  fontSize: isMobile ? "9px" : "10px", 
-                  fontFamily: "Poppins" 
+                sx={{
+                  color: "#666666",
+                  fontSize: "10px",
+                  fontFamily: "Poppins",
                 }}
                 variant="body2"
               >
@@ -209,10 +211,10 @@ export default function Modal({ pokemon, open, onClose }: ModalProps) {
               </Box>
 
               <Typography
-                sx={{ 
-                  color: "#666666", 
-                  fontSize: isMobile ? "9px" : "10px", 
-                  fontFamily: "Poppins" 
+                sx={{
+                  color: "#666666",
+                  fontSize: "10px",
+                  fontFamily: "Poppins",
                 }}
                 variant="body2"
               >
@@ -221,10 +223,10 @@ export default function Modal({ pokemon, open, onClose }: ModalProps) {
             </Box>
           </Box>
 
-          <Typography 
-            variant="body1" 
-            sx={{ 
-              mt: 2, 
+          <Typography
+            variant="body1"
+            sx={{
+              mt: 2,
               fontSize: isMobile ? "10px" : "12px",
               textAlign: "center",
             }}

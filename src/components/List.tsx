@@ -55,10 +55,10 @@ export default function PokemonList({
     <>
       <Typography
         variant="body2"
+        color="text.primary"
         sx={{
           mb: 5,
           fontFamily: "Montserrat",
-          color: "#4D5053",
           fontWeight: "600",
           fontSize: isMobile ? "16px" : "18px",
           display: "flex",

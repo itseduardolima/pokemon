@@ -1,4 +1,12 @@
-import { Card, CardContent, CardMedia, Typography, Box, useMediaQuery, Theme } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Box,
+  useMediaQuery,
+  Theme,
+} from "@mui/material";
 import { PokemonCard as PokemonCardType } from "../types/pokemon";
 import { GrassIcon } from "../assets/icons/GrassIcon";
 import { FireIcon } from "../assets/icons/FireIcon";
@@ -11,7 +19,9 @@ interface PokemonCardProps {
 }
 
 export default function PokemonCard({ pokemon, onClick }: PokemonCardProps) {
-  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
 
   const getTypeIcon = (type: string) => {
     switch (type.toLowerCase()) {
@@ -35,7 +45,7 @@ export default function PokemonCard({ pokemon, onClick }: PokemonCardProps) {
         border: "1px solid #E1E9EF",
         borderRadius: 2,
         boxShadow: "0px 1px 4px 0px #89838370",
-        pt: 2
+        pt: 2,
       }}
     >
       <CardMedia
@@ -43,13 +53,13 @@ export default function PokemonCard({ pokemon, onClick }: PokemonCardProps) {
         height={isMobile ? "200" : "304"}
         image={pokemon.images.small}
         alt={pokemon.name}
-        sx={{objectFit: "contain"}}
+        sx={{ objectFit: "contain" }}
       />
-      <CardContent sx={{p: isMobile ? "10px 15px" : "15px 20px"}}>
+      <CardContent sx={{ p: isMobile ? "10px 15px" : "15px 20px" }}>
         <Typography
           variant="h6"
+          color="text.primary"
           sx={{
-            color: "#2F3133",
             fontSize: isMobile ? "16px" : "18px",
             fontWeight: 600,
             mb: 1,
@@ -71,14 +81,18 @@ export default function PokemonCard({ pokemon, onClick }: PokemonCardProps) {
         >
           <Typography
             variant="body2"
+            color="text.secondary"
             sx={{
-              color: "#7A7D80",
               fontSize: isMobile ? "11px" : "13px",
             }}
           >
             Tipo {pokemon.types[0]}
           </Typography>
-          <Typography variant="body2" sx={{ color: "#7A7D80", fontSize: isMobile ? "11px" : "13px" }}>
+          <Typography
+            color="text.secondary"
+            variant="body2"
+            sx={{ fontSize: isMobile ? "11px" : "13px" }}
+          >
             {pokemon.rarity}
           </Typography>
         </Box>
